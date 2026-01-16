@@ -1,13 +1,10 @@
 # 📧 Email AI Classifier
 
 ![GitHub stars](https://img.shields.io/github/stars/Whandger/Email-analyzer?style=for-the-badge)
-[![Aplicação Online](https://img.shields.io/badge/Acessar_Aplica%C3%A7%C3%A3o-Click_Here-brightgreen?style=for-the-badge)](https://email-analyzer-dx4v.onrender.com)
+[![Aplicação Online](https://img.shields.io/badge/Acessar_Aplicação-Click_Here-brightgreen?style=for-the-badge)](https://email-analyzer-dx4v.onrender.com)
 
-🔗 **Aplicação Online:**  
-https://email-analyzer-dx4v.onrender.com  
-
-📦 **Repositório:**  
-https://github.com/Whandger/Email-analyzer  
+🔗 **Aplicação Online:** https://email-analyzer-dx4v.onrender.com  
+📦 **Repositório:** https://github.com/Whandger/Email-analyzer  
 
 ---
 
@@ -21,13 +18,13 @@ Ideal para automação de triagem de emails, RH, atendimento ao cliente e organi
 
 ## ✨ Funcionalidades
 
-- 📩 Análise automática de emails (texto e PDF/TXT)
-- 🤖 Classificação por IA em **8 categorias**
-- 📊 Score de utilidade (**0 a 100%**)
-- 🏷️ Geração automática de **tags**
-- 📝 Resumo inteligente do conteúdo
-- 💬 Sugestão de resposta automática
-- 🚀 Deploy em produção no **Render**
+- 📩 **Análise automática de emails** (texto e PDF/TXT)
+- 🤖 **Classificação por IA** em 8 categorias
+- 📊 **Score de utilidade** (0 a 100%)
+- 🏷️ **Geração automática de tags**
+- 📝 **Resumo inteligente** do conteúdo
+- 💬 **Sugestão de resposta automática**
+- 🚀 **Deploy em produção** no Render
 
 ---
 
@@ -35,17 +32,14 @@ Ideal para automação de triagem de emails, RH, atendimento ao cliente e organi
 
 ### 🟢 Online (Recomendado)
 
-1. Acesse  
-   👉 https://email-analyzer-dx4v.onrender.com  
-2. Cole um texto ou envie um arquivo **PDF/TXT**
-3. Clique em **"Analisar Email"**
-4. Veja os resultados em tempo real
-
----
+1. **Acesse:** https://email-analyzer-dx4v.onrender.com
+2. **Cole um texto** ou envie um arquivo **PDF/TXT**
+3. **Clique** em **"Analisar Email"**
+4. **Veja os resultados** em tempo real
 
 ### 💻 Executando Localmente
 
-
+```bash
 # Clone o repositório
 git clone https://github.com/Whandger/Email-analyzer.git
 cd Email-analyzer
@@ -55,48 +49,43 @@ pip install -r requirements.txt
 
 # Execute a aplicação
 python server/app.py
-Acesse no navegador:
-👉 http://localhost:5000
 
-📁 Estrutura do Projeto
-text
-Copiar código
+# Acesse no navegador: http://localhost:5000
+```
 autoU_ia/
-├── server/                     # Backend (Flask)
-│   ├── config/                 # Configurações da aplicação
+├── server/
+│   ├── config/
 │   │   └── config.py
-│   ├── routes/                 # Rotas da API
+│   ├── routes/
 │   │   ├── __init__.py
 │   │   └── routes.py
-│   ├── services/               # Lógica de negócio
+│   ├── services/
 │   │   └── email_service.py
-│   ├── utils/                  # Utilitários e helpers
-│   │   ├── file_handler.py     # Manipulação de arquivos (PDF/TXT)
-│   │   ├── hugg_handler.py     # Integração com Hugging Face
-│   │   ├── keywords.py         # Palavras-chave e categorias
-│   │   └── text_processor.py   # Processamento de texto
-│   └── app.py                  # Inicialização do Flask
-│
-├── static/                     # Arquivos estáticos
-│   ├── css/                    # Estilos
-│   ├── images/                 # Imagens
-│   └── js/                     # JavaScript
-│
-├── templates/                  # Templates HTML
-│   └── index.html              # Página principal
-│
-├── .build.sh                   # Script de build
-├── .env                        # Variáveis de ambiente (local)
+│   ├── utils/
+│   │   ├── file_handler.py
+│   │   ├── hugg_handler.py
+│   │   ├── keywords.py
+│   │   └── text_processor.py
+│   └── app.py
+├── static/
+│   ├── css/
+│   ├── images/
+│   └── js/
+├── templates/
+│   └── index.html
+├── .build.sh
+├── .env
 ├── .gitignore
-├── Exemplos.docx               # Arquivo de exemplo
-├── gunicorn_config.py          # Configuração do Gunicorn
-├── Installer.py                # Script de instalação
-├── procfile                    # Configuração de processo
-├── render.yaml                 # Deploy automático no Render
-├── requirements.txt            # Dependências Python
-├── run_app.bat                 # Execução no Windows
-├── run.py                      # Script de inicialização
-└── README.md                   # Documentação
+├── Exemplos.docx
+├── gunicorn_config.py
+├── Installer.py
+├── procfile
+├── render.yaml
+├── requirements.txt
+├── run_app.bat
+├── run.py
+└── README.md
+
 ⚙️ Configuração
 🔑 Token do Hugging Face (Opcional)
 Para melhorar a análise com IA:
@@ -109,16 +98,11 @@ Copie o token (começa com hf_)
 
 Adicione como variável de ambiente:
 
-bash
-Copiar código
 HF_TOKEN=seu_token_aqui
-No Render, configure em Environment Variables.
-
 🚀 Deploy no Render
 O projeto já inclui o arquivo render.yaml:
 
 yaml
-Copiar código
 services:
   - type: web
     name: email-analyzer
@@ -129,8 +113,7 @@ services:
 Endpoint
 POST /analyze
 
-bash
-Copiar código
+text
 https://email-analyzer-dx4v.onrender.com/analyze
 Parâmetros
 content: texto do email
@@ -139,7 +122,6 @@ file: arquivo PDF ou TXT (opcional)
 
 Resposta
 json
-Copiar código
 {
   "utilidade": 0.92,
   "categoria": "CURRICULO",
@@ -171,10 +153,8 @@ Aplicação Web	✅ Online	Render
 API REST	✅ Funcionando	/analyze
 Processamento PDF	✅ Ativo	Extração automática
 Infraestrutura	🟡 Free Tier	Limitações
-
 🤝 Contribuindo
 bash
-Copiar código
 git checkout -b minha-feature
 git commit -m "Minha feature"
 git push origin minha-feature
@@ -186,10 +166,8 @@ Veja o arquivo LICENSE para mais detalhes.
 
 👨‍💻 Autor
 Whandger Wolffenbüttel
-
 GitHub: https://github.com/Whandger
-
-LinkedIn: whandger
+LinkedIn: https://linkedin.com/in/whandger
 
 ⭐ Gostou do projeto?
 Dê uma estrela no GitHub e ajude o projeto a crescer!
