@@ -1,12 +1,17 @@
-# render.yaml
 services:
   - type: web
-    name: email-analyzer
+    name: email-ai-classifier
     env: python
-    buildCommand: pip install -r requirements.txt && python -m spacy download pt_core_news_sm && python -m nltk.downloader stopwords rslp punkt
-    startCommand: gunicorn run:app
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 4 --threads 2 --timeout 120 server.app:app
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.10.12
-      - key: SECRET_KEY
-        generateValue: true
+      - key: HF_TOKEN
+        sync: false  # Configurar manualmente no dashboard do Render
+      - key: FLASK_ENV
+        value: production
+      - key: PYTHONUNBUFFERED
+        value: true
+      - key: PYTHONPATH
+        value: /opt/render/project/src
+    autoDeploy: true
+    healthCheckPath: /health
