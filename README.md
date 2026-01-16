@@ -45,7 +45,7 @@ Ideal para automação de triagem de emails, RH, atendimento ao cliente e organi
 
 ### 💻 Executando Localmente
 
-```bash
+
 # Clone o repositório
 git clone https://github.com/Whandger/Email-analyzer.git
 cd Email-analyzer
