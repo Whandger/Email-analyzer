@@ -91,7 +91,7 @@ python server/app.py
 # Modo produção:
 gunicorn --bind 0.0.0.0:5000 server.app:app
 Acesse no navegador:
-
+``
 text
 http://localhost:5000
 📁 Estrutura do Projeto
@@ -121,7 +121,7 @@ Email-analyzer/
 🔧 Configuração da IA
 Com Token do Hugging Face (Recomendado)
 Crie conta em huggingface.co
-
+``
 Vá em Settings → Access Tokens → New Token
 
 Copie o token (começa com hf_)
