@@ -66,7 +66,7 @@ text
 ### Passo a Passo
 
 1. **Clone o repositório:**
-```bash
+
 git clone https://github.com/Whandger/Email-analyzer.git
 cd Email-analyzer
 Instale dependências:
