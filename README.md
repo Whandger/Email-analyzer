@@ -51,7 +51,8 @@ pip install -r requirements.txt
 python server/app.py
 
 # Acesse no navegador: http://localhost:5000
-```
+📁 Estrutura do Projeto
+text
 autoU_ia/
 ├── server/
 │   ├── config/
@@ -85,7 +86,6 @@ autoU_ia/
 ├── run_app.bat
 ├── run.py
 └── README.md
-
 ⚙️ Configuração
 🔑 Token do Hugging Face (Opcional)
 Para melhorar a análise com IA:
@@ -98,7 +98,10 @@ Copie o token (começa com hf_)
 
 Adicione como variável de ambiente:
 
+bash
 HF_TOKEN=seu_token_aqui
+No Render, configure em Environment Variables.
+
 🚀 Deploy no Render
 O projeto já inclui o arquivo render.yaml:
 
