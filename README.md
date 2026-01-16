@@ -1,45 +1,42 @@
-# 📧 Email AI Classifier
+📧 Email AI Classifier
+https://img.shields.io/github/stars/Whandger/Email-analyzer?style=for-the-badge
+https://img.shields.io/badge/Acessar_Aplica%C3%A7%C3%A3o-Click_Here-brightgreen?style=for-the-badge
 
-![GitHub stars](https://img.shields.io/github/stars/Whandger/Email-analyzer?style=for-the-badge)
-[![Aplicação Online](https://img.shields.io/badge/Acessar_Aplicação-Click_Here-brightgreen?style=for-the-badge)](https://email-analyzer-dx4v.onrender.com)
+🔗 Aplicação Online: https://email-analyzer-dx4v.onrender.com
+📦 Repositório: https://github.com/Whandger/Email-analyzer
 
-🔗 **Aplicação Online:** https://email-analyzer-dx4v.onrender.com  
-📦 **Repositório:** https://github.com/Whandger/Email-analyzer  
-
----
-
-## 🧠 Sobre o Projeto
-
-O **Email AI Classifier** é uma aplicação web que utiliza **Inteligência Artificial** para analisar emails e documentos (PDF/TXT), classificando automaticamente o conteúdo, gerando resumos, tags, score de utilidade e sugerindo respostas automáticas.
+🧠 Sobre o Projeto
+O Email AI Classifier é uma aplicação web que utiliza Inteligência Artificial para analisar emails e documentos (PDF/TXT), classificando automaticamente o conteúdo, gerando resumos, tags, score de utilidade e sugerindo respostas automáticas.
 
 Ideal para automação de triagem de emails, RH, atendimento ao cliente e organização de mensagens.
 
----
+✨ Funcionalidades
+📩 Análise automática de emails (texto e PDF/TXT)
 
-## ✨ Funcionalidades
+🤖 Classificação por IA em 8 categorias
 
-- 📩 **Análise automática de emails** (texto e PDF/TXT)
-- 🤖 **Classificação por IA** em 8 categorias
-- 📊 **Score de utilidade** (0 a 100%)
-- 🏷️ **Geração automática de tags**
-- 📝 **Resumo inteligente** do conteúdo
-- 💬 **Sugestão de resposta automática**
-- 🚀 **Deploy em produção** no Render
+📊 Score de utilidade (0 a 100%)
 
----
+🏷️ Geração automática de tags
 
-## 🚀 Como Usar
+📝 Resumo inteligente do conteúdo
 
-### 🟢 Online (Recomendado)
+💬 Sugestão de resposta automática
 
-1. **Acesse:** https://email-analyzer-dx4v.onrender.com
-2. **Cole um texto** ou envie um arquivo **PDF/TXT**
-3. **Clique** em **"Analisar Email"**
-4. **Veja os resultados** em tempo real
+🚀 Deploy em produção no Render
 
-### 💻 Executando Localmente
+🚀 Como Usar
+🟢 Online (Recomendado)
+Acesse: https://email-analyzer-dx4v.onrender.com
 
-```bash
+Cole um texto ou envie um arquivo PDF/TXT
+
+Clique em "Analisar Email"
+
+Veja os resultados em tempo real
+
+💻 Executando Localmente
+bash
 # Clone o repositório
 git clone https://github.com/Whandger/Email-analyzer.git
 cd Email-analyzer
@@ -174,3 +171,4 @@ LinkedIn: https://linkedin.com/in/whandger
 
 ⭐ Gostou do projeto?
 Dê uma estrela no GitHub e ajude o projeto a crescer!
+
