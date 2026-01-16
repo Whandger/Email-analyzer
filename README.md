@@ -1,174 +1,293 @@
-📧 Email AI Classifier
-https://img.shields.io/github/stars/Whandger/Email-analyzer?style=for-the-badge
-https://img.shields.io/badge/Acessar_Aplica%C3%A7%C3%A3o-Click_Here-brightgreen?style=for-the-badge
+Email AI Classifier
+markdown
+# 📧 Email AI Classifier
 
-🔗 Aplicação Online: https://email-analyzer-dx4v.onrender.com
-📦 Repositório: https://github.com/Whandger/Email-analyzer
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-2.3.3-green.svg)](https://flask.palletsprojects.com/)
+[![Deploy on Render](https://img.shields.io/badge/Render-Deploy-blueviolet)](https://render.com)
 
-🧠 Sobre o Projeto
-O Email AI Classifier é uma aplicação web que utiliza Inteligência Artificial para analisar emails e documentos (PDF/TXT), classificando automaticamente o conteúdo, gerando resumos, tags, score de utilidade e sugerindo respostas automáticas.
+**Classificador inteligente de emails** que usa IA para analisar emails e documentos PDF, categorizando automaticamente e sugerindo respostas.
 
-Ideal para automação de triagem de emails, RH, atendimento ao cliente e organização de mensagens.
+![Screenshot](https://img.shields.io/badge/Live-Demo-brightgreen)
 
-✨ Funcionalidades
-📩 Análise automática de emails (texto e PDF/TXT)
+## ✨ Funcionalidades
 
-🤖 Classificação por IA em 8 categorias
+- ✅ **Análise automática de emails** (texto e PDF)
+- 🤖 **Classificação por IA** em 8 categorias:
+  - 📄 **CURRICULO** - Currículos e candidaturas
+  - 💰 **FINANCEIRO** - Faturas, boletos, documentos
+  - 🚨 **IMPORTANTE** - Emails urgentes
+  - 🎓 **EDUCACIONAL** - Comunicação acadêmica
+  - 💼 **PROFISSIONAL** - Emails corporativos
+  - 📭 **SPAM** - Promoções e marketing
+  - ⚠️ **PHISHING** - Emails suspeitos
+  - 📧 **ROTINA** - Emails normais
+- 📊 **Score de utilidade** (0-100%)
+- 🏷️ **Tags automáticas** baseadas no conteúdo
+- 📝 **Resumo inteligente** do conteúdo
+- 💬 **Sugestão de resposta** automática
+- 🌐 **Deploy pronto** para Render
 
-📊 Score de utilidade (0 a 100%)
+## 🚀 Deploy Rápido no Render
 
-🏷️ Geração automática de tags
+### Método 1: Deploy Automático (Recomendado)
 
-📝 Resumo inteligente do conteúdo
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Whandger/Email-analyzer)
 
-💬 Sugestão de resposta automática
+1. Clique no botão acima
+2. Configure o nome do serviço
+3. Adicione a variável `HF_TOKEN` (opcional):
+   - Vá em Dashboard → Seu Serviço → Environment
+   - Adicione: `HF_TOKEN = seu_token_huggingface`
+4. Clique em **Apply** e depois **Deploy**
 
-🚀 Deploy em produção no Render
+### Método 2: Deploy Manual
 
-🚀 Como Usar
-🟢 Online (Recomendado)
-Acesse: https://email-analyzer-dx4v.onrender.com
+1. **Crie conta no Render** (render.com)
+2. **Crie novo Web Service**
+3. **Conecte seu repositório GitHub**
+4. **Configure:**
+Build Command: pip install -r requirements.txt
+Start Command: gunicorn --bind 0.0.0.0:$PORT server.app:app
 
-Cole um texto ou envie um arquivo PDF/TXT
+text
+5. **Adicione variáveis de ambiente:**
+- `HF_TOKEN`: (opcional) Token do Hugging Face
+- `PYTHONUNBUFFERED`: `true`
+6. **Clique em Deploy**
 
-Clique em "Analisar Email"
+## 🛠️ Instalação Local
 
-Veja os resultados em tempo real
+### Pré-requisitos
+- Python 3.10+
+- pip (gerenciador de pacotes)
+- Git (opcional)
 
-💻 Executando Localmente
-bash
-# Clone o repositório
+### Passo a Passo
+
+1. **Clone o repositório:**
+```bash
 git clone https://github.com/Whandger/Email-analyzer.git
 cd Email-analyzer
+Instale dependências:
 
-# Instale as dependências
+bash
+# Usando o instalador automático:
+python install_render.py
+
+# Ou manualmente:
 pip install -r requirements.txt
+Configure (opcional):
+Edite server/config/config.py para adicionar seu token:
 
-# Execute a aplicação
+python
+HF_TOKEN = "hf_seu_token_aqui"  # Token do Hugging Face (opcional)
+Execute a aplicação:
+
+bash
+# Modo desenvolvimento:
 python server/app.py
 
-# Acesse no navegador: http://localhost:5000
+# Modo produção:
+gunicorn --bind 0.0.0.0:5000 server.app:app
+Acesse no navegador:
+
+text
+http://localhost:5000
 📁 Estrutura do Projeto
 text
-autoU_ia/
-├── server/
+Email-analyzer/
+├── server/                    # Backend Flask
+│   ├── app.py                # Aplicação principal
 │   ├── config/
-│   │   └── config.py
-│   ├── routes/
-│   │   ├── __init__.py
-│   │   └── routes.py
-│   ├── services/
-│   │   └── email_service.py
+│   │   └── config.py         # Configurações
 │   ├── utils/
-│   │   ├── file_handler.py
-│   │   ├── hugg_handler.py
-│   │   ├── keywords.py
-│   │   └── text_processor.py
-│   └── app.py
-├── static/
+│   │   ├── text_processor.py # Processador de texto
+│   │   └── hugg_handler.py   # Integração com IA
+│   └── routes/
+│       └── api.py            # Rotas da API
+├── static/                   # Arquivos estáticos
 │   ├── css/
-│   ├── images/
+│   │   └── index.css        # Estilos
 │   └── js/
+│       └── email.js         # JavaScript
 ├── templates/
-│   └── index.html
-├── .build.sh
-├── .env
-├── .gitignore
-├── Exemplos.docx
-├── gunicorn_config.py
-├── Installer.py
-├── procfile
-├── render.yaml
-├── requirements.txt
-├── run_app.bat
-├── run.py
-└── README.md
-⚙️ Configuração
-🔑 Token do Hugging Face (Opcional)
-Para melhorar a análise com IA:
-
-Crie uma conta em https://huggingface.co
+│   └── index.html           # Página principal
+├── requirements.txt         # Dependências Python
+├── runtime.txt             # Versão do Python (Render)
+├── render.yaml             # Configuração Render
+├── install_render.py       # Instalador automático
+└── README.md               # Este arquivo
+🔧 Configuração da IA
+Com Token do Hugging Face (Recomendado)
+Crie conta em huggingface.co
 
 Vá em Settings → Access Tokens → New Token
 
 Copie o token (começa com hf_)
 
-Adicione como variável de ambiente:
+Adicione em server/config/config.py ou variável de ambiente
 
-bash
-HF_TOKEN=seu_token_aqui
-No Render, configure em Environment Variables.
+Sem Token (Modo Local)
+Usa análise por keywords
 
-🚀 Deploy no Render
-O projeto já inclui o arquivo render.yaml:
+Funciona para categorização básica
 
-yaml
-services:
-  - type: web
-    name: email-analyzer
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn --bind 0.0.0.0:$PORT server.app:app
-🔌 API REST
-Endpoint
-POST /analyze
+Não requer configuração adicional
+
+📊 Como Usar
+Acesse a aplicação (localhost:5000 ou seu deploy)
+
+Digite um texto ou envie um arquivo PDF
+
+Clique em "Analisar Email"
+
+Veja os resultados:
+
+📊 Score de utilidade
+
+🏷️ Categoria automática
+
+📝 Resumo do conteúdo
+
+💬 Sugestão de resposta
+
+🔖 Tags relevantes
+
+Exemplo de Análise
+Entrada:
 
 text
-https://email-analyzer-dx4v.onrender.com/analyze
-Parâmetros
-content: texto do email
+Olá, envio meu currículo para a vaga de desenvolvedor Python.
+Experiência com Django, Flask, AWS.
+Portfólio: github.com/usuario
+Saída:
 
-file: arquivo PDF ou TXT (opcional)
+📊 Utilidade: 92%
 
-Resposta
+🏷️ Categoria: CURRICULO
+
+📝 Resumo: Currículo profissional para vaga de desenvolvedor Python...
+
+💬 Resposta: ✅ Currículo recebido com sucesso!
+
+🔖 Tags: python, django, github
+
+🐛 Troubleshooting
+Problemas Comuns
+Erro no deploy do Render:
+
+bash
+# Verifique os logs:
+Render Dashboard → Seu Serviço → Logs
+
+# Solução comum:
+- Verifique requirements.txt
+- Confirme variáveis de ambiente
+- Use Python 3.10+ (runtime.txt)
+Erro "Module not found":
+
+bash
+pip install -r requirements.txt
+python -m pip install --upgrade pip
+PDF não processa:
+
+Verifique se é PDF válido
+
+Tamanho máximo: 10MB
+
+Use PDFs com texto (não apenas imagens)
+
+IA não funciona:
+
+Sem token: usa modo local
+
+Com token: verifique se é válido
+
+Teste em: https://huggingface.co/settings/tokens
+
+Logs Importantes
+bash
+# No Render:
+Render Dashboard → Seu Serviço → Logs
+
+# Localmente:
+python server/app.py  # Mostra logs no terminal
+🔍 API Endpoints
+POST /analyze
+Analisa conteúdo de email.
+
+Parâmetros:
+
+content (texto): Conteúdo do email
+
+file (arquivo): PDF ou TXT (opcional)
+
+Resposta:
+
 json
 {
   "utilidade": 0.92,
   "categoria": "CURRICULO",
   "resumo": "Currículo profissional...",
+  "acao_necessaria": true,
   "tags": ["python", "django"],
-  "resposta": "✅ Currículo recebido com sucesso!"
+  "resposta": "✅ Currículo recebido com sucesso!",
+  "fonte": "huggingface_api"
 }
-🐛 Solução de Problemas
-⏱️ Aplicação lenta no primeiro acesso
-Render Free Tier possui cold start
+📈 Roadmap
+Suporte a mais formatos (DOCX, XLSX)
 
-Aguarde 30–60 segundos na primeira requisição
+Dashboard com estatísticas
 
-🔴 Erro "Service Unavailable"
-Recarregue após alguns segundos
+Exportação de relatórios
 
-Status do Render: https://status.render.com
+Integração com Gmail/Outlook
 
-📄 PDF não processa
-Tamanho máximo: 10MB
+Modelos de IA customizados
 
-Formatos aceitos: PDF, TXT
+API REST completa
 
-PDFs precisam conter texto (não apenas imagens)
+Sistema de plugins
 
-📊 Status do Projeto
-Componente	Status	Detalhes
-Aplicação Web	✅ Online	Render
-API REST	✅ Funcionando	/analyze
-Processamento PDF	✅ Ativo	Extração automática
-Infraestrutura	🟡 Free Tier	Limitações
 🤝 Contribuindo
-bash
-git checkout -b minha-feature
-git commit -m "Minha feature"
-git push origin minha-feature
-Abra um Pull Request.
+Fork o projeto
+
+Crie uma branch (git checkout -b feature/nova-feature)
+
+Commit suas mudanças (git commit -m 'Add nova feature')
+
+Push para a branch (git push origin feature/nova-feature)
+
+Abra um Pull Request
+
+Código de Conduta
+Respeite todos os contribuidores
+
+Mantenha o foco técnico
+
+Use inglês para issues e PRs
 
 📄 Licença
-Este projeto está sob a licença MIT.
-Veja o arquivo LICENSE para mais detalhes.
+MIT License - veja LICENSE para detalhes.
 
 👨‍💻 Autor
 Whandger Wolffenbüttel
-GitHub: https://github.com/Whandger
-LinkedIn: https://linkedin.com/in/whandger
 
-⭐ Gostou do projeto?
-Dê uma estrela no GitHub e ajude o projeto a crescer!
+GitHub: @Whandger
 
+LinkedIn: whandger
+
+Email: whandger@gmail.com
+
+🙏 Agradecimentos
+Hugging Face por modelos de IA
+
+Render por hospedagem gratuita
+
+Comunidade open-source pelas bibliotecas
+
+⭐ Gostou do projeto? Dê uma estrela no GitHub! ⭐
+
+https://img.shields.io/github/stars/Whandger/Email-analyzer?style=social
+https://img.shields.io/github/forks/Whandger/Email-analyzer?style=social
