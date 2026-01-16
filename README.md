@@ -1,5 +1,4 @@
 📧 Email AI Classifier
-Teste agora: https://email-analyzer-dx4v.onrender.com/
 https://img.shields.io/badge/Python-3.10+-blue.svg
 https://img.shields.io/badge/Flask-2.3.3-green.svg
 https://img.shields.io/badge/Render-Deploy-blueviolet
@@ -299,3 +298,5 @@ Issues/Bugs: GitHub Issues
 
 https://img.shields.io/github/stars/Whandger/Email-analyzer?style=social
 https://img.shields.io/github/forks/Whandger/Email-analyzer?style=social
+
+Teste agora: https://email-analyzer-dx4v.onrender.com/
