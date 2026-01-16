@@ -1,79 +1,83 @@
-# 📧 Email AI Classifier
+📧 Email AI Classifier
+Teste agora: https://email-analyzer-dx4v.onrender.com/
+https://img.shields.io/badge/Python-3.10+-blue.svg
+https://img.shields.io/badge/Flask-2.3.3-green.svg
+https://img.shields.io/badge/Render-Deploy-blueviolet
 
-[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
-[![Flask](https://img.shields.io/badge/Flask-2.3.3-green.svg)](https://flask.palletsprojects.com/)
-[![Deploy on Render](https://img.shields.io/badge/Render-Deploy-blueviolet)](https://render.com)
+Deploy Ativo: 🌐 https://email-analyzer-dx4v.onrender.com/
 
-**Classificador inteligente de emails** que usa IA para analisar emails e documentos PDF, categorizando automaticamente e sugerindo respostas.
+Classificador inteligente de emails que usa IA para analisar emails e documentos PDF, categorizando automaticamente e sugerindo respostas. A aplicação já está em produção e pode ser testada através do link acima.
 
-![Screenshot](https://img.shields.io/badge/Live-Demo-brightgreen)
+✨ Funcionalidades
+✅ Análise automática de emails (texto e PDF)
 
-## ✨ Funcionalidades
+🤖 Classificação por IA em 8 categorias:
 
-- ✅ **Análise automática de emails** (texto e PDF)
-- 🤖 **Classificação por IA** em 8 categorias:
-  - 📄 **CURRICULO** - Currículos e candidaturas
-  - 💰 **FINANCEIRO** - Faturas, boletos, documentos
-  - 🚨 **IMPORTANTE** - Emails urgentes
-  - 🎓 **EDUCACIONAL** - Comunicação acadêmica
-  - 💼 **PROFISSIONAL** - Emails corporativos
-  - 📭 **SPAM** - Promoções e marketing
-  - ⚠️ **PHISHING** - Emails suspeitos
-  - 📧 **ROTINA** - Emails normais
-- 📊 **Score de utilidade** (0-100%)
-- 🏷️ **Tags automáticas** baseadas no conteúdo
-- 📝 **Resumo inteligente** do conteúdo
-- 💬 **Sugestão de resposta** automática
-- 🌐 **Deploy pronto** para Render
+📄 CURRICULO - Currículos e candidaturas
 
-## 🚀 Deploy Rápido no Render
+💰 FINANCEIRO - Faturas, boletos, documentos
 
-### Método 1: Deploy Automático (Recomendado)
+🚨 IMPORTANTE - Emails urgentes
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://email-analyzer-dx4v.onrender.com/)
+🎓 EDUCACIONAL - Comunicação acadêmica
 
-1. Clique no botão acima
-2. Configure o nome do serviço
-3. Adicione a variável `HF_TOKEN` (opcional):
-   - Vá em Dashboard → Seu Serviço → Environment
-   - Adicione: `HF_TOKEN = seu_token_huggingface`
-4. Clique em **Apply** e depois **Deploy**
+💼 PROFISSIONAL - Emails corporativos
 
-### Método 2: Deploy Manual
+📭 SPAM - Promoções e marketing
 
-1. **Crie conta no Render** (render.com)
-2. **Crie novo Web Service**
-3. **Conecte seu repositório GitHub**
-4. **Configure:**
-Build Command: pip install -r requirements.txt
-Start Command: gunicorn --bind 0.0.0.0:$PORT server.app:app
+⚠️ PHISHING - Emails suspeitos
 
-text
-5. **Adicione variáveis de ambiente:**
-- `HF_TOKEN`: (opcional) Token do Hugging Face
-- `PYTHONUNBUFFERED`: `true`
-6. **Clique em Deploy**
+📧 ROTINA - Emails normais
 
-## 🛠️ Instalação Local
+📊 Score de utilidade (0-100%)
 
-### Pré-requisitos
-- Python 3.10+
-- pip (gerenciador de pacotes)
-- Git (opcional)
+🏷️ Tags automáticas baseadas no conteúdo
 
-### Passo a Passo
+📝 Resumo inteligente do conteúdo
 
-1. **Clone o repositório:**
-```bash
+💬 Sugestão de resposta automática
+
+🌐 Deploy em produção no Render
+
+🚀 Como Usar (Aplicação Online)
+A aplicação já está em produção e pode ser usada diretamente:
+
+Acesse a aplicação: https://email-analyzer-dx4v.onrender.com/
+
+Cole um texto na área de texto
+
+Ou envie um arquivo PDF/TXT
+
+Clique em "Analisar Email"
+
+Veja os resultados em tempo real
+
+Teste Imediato
+URL: https://email-analyzer-dx4v.onrender.com/
+
+Não requer instalação
+
+Processa PDFs e texto puro
+
+Resultados instantâneos
+
+🛠️ Instalação Local (Desenvolvimento)
+Pré-requisitos
+Python 3.10+
+
+pip (gerenciador de pacotes)
+
+Git (opcional)
+
+Passo a Passo
+Clone o repositório:
+
+bash
 git clone https://github.com/Whandger/Email-analyzer.git
 cd Email-analyzer
 Instale dependências:
 
 bash
-# Usando o instalador automático:
-python install_render.py
-
-# Ou manualmente:
 pip install -r requirements.txt
 Configure (opcional):
 Edite server/config/config.py para adicionar seu token:
@@ -85,10 +89,7 @@ Execute a aplicação:
 bash
 # Modo desenvolvimento:
 python server/app.py
-
-# Modo produção:
-gunicorn --bind 0.0.0.0:5000 server.app:app
-Acesse no navegador:
+Acesse localmente:
 
 text
 http://localhost:5000
@@ -114,105 +115,92 @@ Email-analyzer/
 ├── requirements.txt         # Dependências Python
 ├── runtime.txt             # Versão do Python (Render)
 ├── render.yaml             # Configuração Render
-├── install_render.py       # Instalador automático
 └── README.md               # Este arquivo
 🔧 Configuração da IA
-Com Token do Hugging Face (Recomendado)
+Com Token do Hugging Face (Opcional)
 Crie conta em huggingface.co
 
 Vá em Settings → Access Tokens → New Token
 
 Copie o token (começa com hf_)
 
-Adicione em server/config/config.py ou variável de ambiente
+Adicione como variável de ambiente HF_TOKEN
 
 Sem Token (Modo Local)
 Usa análise por keywords
 
 Funciona para categorização básica
 
-Não requer configuração adicional
+É o modo atual em produção
 
-📊 Como Usar
-Acesse a aplicação (localhost:5000 ou seu deploy)
+🚀 Deploy no Render (Como foi Feito)
+Configuração do Render
+O projeto está configurado para deploy automático no Render:
 
-Digite um texto ou envie um arquivo PDF
+render.yaml:
 
-Clique em "Analisar Email"
+yaml
+services:
+  - type: web
+    name: email-analyzer
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT server.app:app
+    envVars:
+      - key: HF_TOKEN
+        sync: false
+      - key: PYTHONUNBUFFERED
+        value: true
+requirements.txt:
 
-Veja os resultados:
+txt
+Flask==2.3.3
+Flask-CORS==4.0.0
+gunicorn==21.2.0
+requests==2.31.0
+python-dotenv==1.0.0
+pdfplumber==0.10.3
+PyPDF2==3.0.1
+chardet==5.2.0
+nltk==3.8.1
+runtime.txt:
 
-📊 Score de utilidade
+txt
+python-3.10.12
+Deploy Automático
+Conecte o repositório no Render
 
-🏷️ Categoria automática
+Use as configurações acima
 
-📝 Resumo do conteúdo
+Deploy automático a cada push para main
 
-💬 Sugestão de resposta
+URL gerada: https://email-analyzer-*.onrender.com
 
-🔖 Tags relevantes
+📊 Exemplo de Uso na Aplicação Online
+1. Acesse: https://email-analyzer-dx4v.onrender.com/
 
-Exemplo de Análise
-Entrada:
+2. Digite um exemplo:
 
 text
-Olá, envio meu currículo para a vaga de desenvolvedor Python.
-Experiência com Django, Flask, AWS.
-Portfólio: github.com/usuario
-Saída:
+Olá, envio meu currículo para vaga de desenvolvedor.
+Experiência: Python, Django, PostgreSQL.
+LinkedIn: linkedin.com/in/exemplo
+3. Resultado esperado:
 
-📊 Utilidade: 92%
+📊 Utilidade: 90%+
 
 🏷️ Categoria: CURRICULO
 
-📝 Resumo: Currículo profissional para vaga de desenvolvedor Python...
+📝 Resumo: Currículo profissional detectado...
 
 💬 Resposta: ✅ Currículo recebido com sucesso!
 
-🔖 Tags: python, django, github
+🔖 Tags: python, django, profissional
 
-🐛 Troubleshooting
-Problemas Comuns
-Erro no deploy do Render:
-
-bash
-# Verifique os logs:
-Render Dashboard → Seu Serviço → Logs
-
-# Solução comum:
-- Verifique requirements.txt
-- Confirme variáveis de ambiente
-- Use Python 3.10+ (runtime.txt)
-Erro "Module not found":
-
-bash
-pip install -r requirements.txt
-python -m pip install --upgrade pip
-PDF não processa:
-
-Verifique se é PDF válido
-
-Tamanho máximo: 10MB
-
-Use PDFs com texto (não apenas imagens)
-
-IA não funciona:
-
-Sem token: usa modo local
-
-Com token: verifique se é válido
-
-Teste em: https://huggingface.co/settings/tokens
-
-Logs Importantes
-bash
-# No Render:
-Render Dashboard → Seu Serviço → Logs
-
-# Localmente:
-python server/app.py  # Mostra logs no terminal
 🔍 API Endpoints
 POST /analyze
+Disponível em: https://email-analyzer-dx4v.onrender.com/analyze
+
 Analisa conteúdo de email.
 
 Parâmetros:
@@ -233,20 +221,49 @@ json
   "resposta": "✅ Currículo recebido com sucesso!",
   "fonte": "huggingface_api"
 }
-📈 Roadmap
-Suporte a mais formatos (DOCX, XLSX)
+🐛 Troubleshooting
+Problemas no Deploy
+Aplicação lenta no Render:
 
-Dashboard com estatísticas
+Render Free Tier tem cold starts
 
-Exportação de relatórios
+Primeiro acesso pode demorar 30-60s
 
-Integração com Gmail/Outlook
+Após inicializado, funciona normalmente
 
-Modelos de IA customizados
+Erro "Service Unavailable":
 
-API REST completa
+Recarrege a página após 60 segundos
 
-Sistema de plugins
+Verifique o status em Render Status
+
+Free Tier tem limites de uso
+
+PDF não processa:
+
+Tamanho máximo: 10MB
+
+Use PDFs com texto (não apenas imagens)
+
+Formatos aceitos: PDF, TXT
+
+Logs e Monitoramento
+Logs do Render: Dashboard → Seu Serviço → Logs
+
+Status da API: Acesse /health (se implementado)
+
+Uso de recursos: Render Dashboard → Metrics
+
+📈 Próximos Passos
+Adicionar endpoint /health para monitoramento
+
+Implementar cache para melhor performance
+
+Adicionar suporte a mais formatos (DOCX)
+
+Criar dashboard de estatísticas
+
+Adicionar autenticação para API
 
 🤝 Contribuindo
 Fork o projeto
@@ -258,13 +275,6 @@ Commit suas mudanças (git commit -m 'Add nova feature')
 Push para a branch (git push origin feature/nova-feature)
 
 Abra um Pull Request
-
-Código de Conduta
-Respeite todos os contribuidores
-
-Mantenha o foco técnico
-
-Use inglês para issues e PRs
 
 📄 Licença
 MIT License - veja LICENSE para detalhes.
@@ -278,39 +288,14 @@ LinkedIn: whandger
 
 Email: whandger@gmail.com
 
-🙏 Agradecimentos
-Hugging Face por modelos de IA
+🌐 Links
+Aplicação Online: https://email-analyzer-dx4v.onrender.com/
 
-Render por hospedagem gratuita
+Repositório: https://github.com/Whandger/Email-analyzer
 
-Comunidade open-source pelas bibliotecas
+Issues/Bugs: GitHub Issues
 
 ⭐ Gostou do projeto? Dê uma estrela no GitHub! ⭐
 
 https://img.shields.io/github/stars/Whandger/Email-analyzer?style=social
 https://img.shields.io/github/forks/Whandger/Email-analyzer?style=social
-
-text
-
-## 📋 Checklist de Deploy
-
-### Antes do Deploy:
-- [ ] `requirements.txt` atualizado
-- [ ] `runtime.txt` com Python 3.10+
-- [ ] `render.yaml` configurado
-- [ ] Testado localmente
-- [ ] HF_TOKEN configurado (opcional)
-
-### Após o Deploy:
-- [ ] Acessar URL do Render
-- [ ] Testar upload de PDF
-- [ ] Testar análise de texto
-- [ ] Verificar logs no dashboard
-
-### Se Der Erro:
-1. ✅ Verificar `requirements.txt`
-2. ✅ Conferir `runtime.txt` (3.10.12)
-3. ✅ Checar variáveis de ambiente
-4. ✅ Examinar logs do Render
-
-O projeto está pronto para deploy no Render! 🚀
