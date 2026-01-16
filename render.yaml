@@ -1,0 +1,12 @@
+# render.yaml
+services:
+  - type: web
+    name: email-analyzer
+    env: python
+    buildCommand: pip install -r requirements.txt && python -m spacy download pt_core_news_sm && python -m nltk.downloader stopwords rslp punkt
+    startCommand: gunicorn run:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.12
+      - key: SECRET_KEY
+        generateValue: true
