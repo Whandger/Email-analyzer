@@ -1,5 +1,3 @@
-README.md - Email AI Classifier
-markdown
 # 📧 Email AI Classifier
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
