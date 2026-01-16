@@ -61,21 +61,49 @@ Acesse no navegador:
 📁 Estrutura do Projeto
 text
 Copiar código
-Email-analyzer/
-├── server/                    # Backend Flask
-│   ├── app.py                 # Aplicação principal
-│   ├── config/                # Configurações
-│   ├── utils/                 # Utilitários
-│   └── routes/                # Rotas da API
-├── static/                    # Arquivos estáticos
-│   ├── css/                   # Estilos
-│   └── js/                    # JavaScript
-├── templates/                 # Templates HTML
-│   └── index.html             # Página principal
-├── requirements.txt           # Dependências Python
-├── runtime.txt                # Python 3.10.12
-├── render.yaml                # Configuração do Render
-└── README.md                  # Documentação
+main/
+├── server/                     # Backend (Flask)
+│   ├── __pycache__/
+│   ├── config/                 # Configurações da aplicação
+│   │   ├── __pycache__/
+│   │   └── config.py
+│   ├── routes/                 # Rotas da API
+│   │   ├── __pycache__/
+│   │   ├── __init__.py
+│   │   └── routes.py
+│   ├── services/               # Lógica de negócio
+│   │   ├── __pycache__/
+│   │   └── email_service.py
+│   ├── utils/                  # Utilitários e helpers
+│   │   ├── __pycache__/
+│   │   ├── __init__.py
+│   │   ├── file_handler.py     # Manipulação de arquivos (PDF/TXT)
+│   │   ├── hugg_handler.py     # Integração com Hugging Face
+│   │   ├── keywords.py         # Palavras-chave e categorias
+│   │   └── text_processor.py   # Processamento de texto
+│   └── app.py                  # Inicialização do Flask
+│
+├── static/                     # Arquivos estáticos
+│   ├── css/                    # Estilos
+│   ├── images/                 # Imagens
+│   └── js/                     # JavaScript
+│
+├── templates/                  # Templates HTML
+│   └── index.html              # Página principal
+│
+├── .build.sh                   # Script de build
+├── .env                        # Variáveis de ambiente (local)
+├── .gitignore
+├── Exemplos.docx               # Arquivo de exemplo
+├── gunicorn_config.py          # Configuração do Gunicorn
+├── Installer.py                # Script de instalação
+├── procfile                    # Configuração de processo
+├── render.yaml                 # Deploy automático no Render
+├── requirements.txt            # Dependências Python
+├── run_app.bat                 # Execução no Windows
+├── run.py                      # Script de inicialização
+└── README.md                   # Documentação
+
 ⚙️ Configuração
 🔑 Token do Hugging Face (Opcional)
 Para melhorar a análise com IA:
