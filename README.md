@@ -1,99 +1,125 @@
-📧 Email AI Classifier
-Aplicação online: https://email-analyzer-dx4v.onrender.com
-Repositório: https://github.com/Whandger/Email-analyzer
+# 📧 Email AI Classifier
 
-Classificador inteligente de emails que usa IA para analisar emails e documentos PDF, categorizando automaticamente e sugerindo respostas.
+![GitHub stars](https://img.shields.io/github/stars/Whandger/Email-analyzer?style=for-the-badge)
+[![Aplicação Online](https://img.shields.io/badge/Acessar_Aplica%C3%A7%C3%A3o-Click_Here-brightgreen?style=for-the-badge)](https://email-analyzer-dx4v.onrender.com)
 
-✨ Funcionalidades
-Análise automática de emails (texto e PDF)
+🔗 **Aplicação Online:**  
+https://email-analyzer-dx4v.onrender.com  
 
-Classificação por IA em 8 categorias
+📦 **Repositório:**  
+https://github.com/Whandger/Email-analyzer  
 
-Score de utilidade (0-100%)
+---
 
-Tags automáticas baseadas no conteúdo
+## 🧠 Sobre o Projeto
 
-Resumo inteligente do conteúdo
+O **Email AI Classifier** é um classificador inteligente de emails que utiliza **Inteligência Artificial** para analisar conteúdos de emails e documentos (PDF/TXT), categorizando automaticamente e sugerindo respostas inteligentes.
 
-Sugestão de resposta automática
+Ideal para automação de triagem de emails, RH, atendimento ao cliente e organização de mensagens.
 
-Deploy em produção no Render
+---
 
-🚀 Como Usar
-🟢 Online (Recomendado)
-Acesse https://email-analyzer-dx4v.onrender.com
+## ✨ Funcionalidades
 
-Cole um texto ou envie um arquivo PDF/TXT
+- 📩 Análise automática de emails (texto e PDF)
+- 🤖 Classificação por IA em **8 categorias**
+- 📊 Score de utilidade (**0 a 100%**)
+- 🏷️ Geração automática de **tags**
+- 📝 Resumo inteligente do conteúdo
+- 💬 Sugestão de resposta automática
+- 🚀 Deploy em produção no **Render**
 
-Clique em "Analisar Email"
+---
 
-Veja os resultados em tempo real
+## 🚀 Como Usar
 
-💻 Localmente
-bash
+### 🟢 Online (Recomendado)
+
+1. Acesse:  
+   👉 https://email-analyzer-dx4v.onrender.com
+2. Cole um texto ou envie um arquivo **PDF/TXT**
+3. Clique em **"Analisar Email"**
+4. Veja os resultados em tempo real
+
+---
+
+### 💻 Executando Localmente
+
+```bash
 # Clone o repositório
 git clone https://github.com/Whandger/Email-analyzer.git
 cd Email-analyzer
 
-# Instale dependências
+# Instale as dependências
 pip install -r requirements.txt
 
 # Execute a aplicação
 python server/app.py
+Acesse no navegador:
+👉 http://localhost:5000
 
-# Acesse: http://localhost:5000
 📁 Estrutura do Projeto
 text
+Copiar código
 Email-analyzer/
 ├── server/                    # Backend Flask
-│   ├── app.py                # Aplicação principal
-│   ├── config/               # Configurações
-│   ├── utils/                # Utilitários
-│   └── routes/               # Rotas da API
-├── static/                   # Arquivos estáticos
-│   ├── css/                  # Estilos
-│   └── js/                   # JavaScript
-├── templates/                # Templates HTML
-│   └── index.html            # Página principal
-├── requirements.txt          # Dependências Python
-├── runtime.txt              # Python 3.10.12
-├── render.yaml              # Configuração Render
-└── README.md                # Documentação
+│   ├── app.py                 # Aplicação principal
+│   ├── config/                # Configurações
+│   ├── utils/                 # Utilitários
+│   └── routes/                # Rotas da API
+├── static/                    # Arquivos estáticos
+│   ├── css/                   # Estilos
+│   └── js/                    # JavaScript
+├── templates/                 # Templates HTML
+│   └── index.html             # Página principal
+├── requirements.txt           # Dependências Python
+├── runtime.txt                # Python 3.10.12
+├── render.yaml                # Configuração do Render
+└── README.md                  # Documentação
 ⚙️ Configuração
 🔑 Token do Hugging Face (Opcional)
 Para melhorar a análise com IA:
 
-Crie conta em huggingface.co
+Crie uma conta em https://huggingface.co
 
 Vá em Settings → Access Tokens → New Token
 
 Copie o token (começa com hf_)
 
-Adicione como variável de ambiente HF_TOKEN no Render
+Adicione como variável de ambiente:
 
-🚀 Configuração Render
-O projeto inclui render.yaml para deploy automático:
+bash
+Copiar código
+HF_TOKEN=seu_token_aqui
+No Render, configure em Environment Variables.
+
+🚀 Deploy no Render
+O projeto já inclui o arquivo render.yaml:
 
 yaml
+Copiar código
 services:
   - type: web
     name: email-analyzer
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn --bind 0.0.0.0:$PORT server.app:app
-🔌 API
-Endpoint: POST /analyze
-URL: https://email-analyzer-dx4v.onrender.com/analyze
+🔌 API REST
+Endpoint
+POST /analyze
+URL:
 
-Parâmetros:
-
+bash
+Copiar código
+https://email-analyzer-dx4v.onrender.com/analyze
+Parâmetros
 content: texto do email
 
-file: arquivo PDF/TXT (opcional)
+file: arquivo PDF ou TXT (opcional)
 
-Resposta:
-
+Resposta
 json
+Copiar código
 {
   "utilidade": 0.92,
   "categoria": "CURRICULO",
@@ -103,45 +129,53 @@ json
 }
 🐛 Solução de Problemas
 ⏱️ Aplicação lenta no primeiro acesso
-Render Free Tier tem "cold starts"
+O Render Free Tier possui cold starts
 
-Aguarde 30-60 segundos na primeira requisição
-
-Funciona normalmente após inicialização
+Aguarde 30–60 segundos na primeira requisição
 
 🔴 Erro "Service Unavailable"
-Recarregue a página após 60 segundos
+Recarregue após alguns segundos
 
-Render Free Tier tem limites de uso
-
-Verifique status em status.render.com
+Verifique o status do Render:
+https://status.render.com
 
 📄 PDF não processa
 Tamanho máximo: 10MB
 
 Formatos aceitos: PDF, TXT
 
-Atenção: PDFs devem conter texto (não apenas imagens)
+PDFs precisam conter texto (não apenas imagens)
 
 📊 Status do Projeto
 Componente	Status	Detalhes
-Aplicação Web	✅ Online	https://email-analyzer-dx4v.onrender.com
-API REST	✅ Funcionando	Endpoint /analyze ativo
-Processamento PDF	✅ Ativo	Extração de texto automática
-Infraestrutura	🟡 Render Free Tier	Limitações de performance
+Aplicação Web	✅ Online	Render
+API REST	✅ Funcionando	/analyze
+Processamento PDF	✅ Ativo	Extração automática
+Infraestrutura	🟡 Free Tier	Limitações de performance
+
 🤝 Contribuindo
-Fork o projeto
+Faça um Fork
 
-Crie uma branch: git checkout -b minha-feature
+Crie uma branch:
 
-Commit: git commit -m 'Minha feature'
+bash
+Copiar código
+git checkout -b minha-feature
+Commit:
 
-Push: git push origin minha-feature
+bash
+Copiar código
+git commit -m "Minha feature"
+Push:
 
+bash
+Copiar código
+git push origin minha-feature
 Abra um Pull Request
 
 📄 Licença
-MIT License - veja LICENSE para detalhes.
+Este projeto está sob a licença MIT.
+Veja o arquivo LICENSE para mais detalhes.
 
 👨‍💻 Autor
 Whandger Wolffenbüttel
@@ -150,15 +184,5 @@ GitHub: @Whandger
 
 LinkedIn: whandger
 
-Links do projeto:
-
-🌐 Aplicação Online: https://email-analyzer-dx4v.onrender.com
-
-📦 Repositório: https://github.com/Whandger/Email-analyzer
-
-🐛 Reportar Bugs: GitHub Issues
-
-⭐ Gostou do projeto? Dê uma estrela no GitHub!
-
-https://img.shields.io/github/stars/Whandger/Email-analyzer?style=for-the-badge
-https://img.shields.io/badge/Acessar_Aplica%C3%A7%C3%A3o-Click_Here-brightgreen?style=for-the-badge
+⭐ Gostou do projeto?
+Deixe uma estrela no GitHub e ajude o projeto a crescer!
