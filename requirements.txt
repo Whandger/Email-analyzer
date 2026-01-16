@@ -1,0 +1,19 @@
+# NLP e processamento de texto
+nltk>=3.8
+spacy>=3.7.0
+https://github.com/explosion/spacy-models/releases/download/pt_core_news_sm-3.7.0/pt_core_news_sm-3.7.0.tar.gz
+
+# Para leitura de PDF
+PyPDF2>=3.0.0
+pdfminer.six>=20221105
+
+# Para leitura de DOCX (opcional)
+python-docx>=1.0.0
+
+# Para detecção de encoding
+chardet>=5.2.0
+
+# Hugging Face
+huggingface-hub>=0.20.0
+transformers>=4.36.0
+requests>=2.31.0
