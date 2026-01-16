@@ -7,6 +7,7 @@ markdown
 [![Deploy on Render](https://img.shields.io/badge/Render-Deploy-blueviolet)](https://render.com)
 
 **Classificador inteligente de emails** que usa IA para analisar emails e documentos PDF, categorizando automaticamente e sugerindo respostas.
+Deploy https://email-analyzer-dx4v.onrender.com/
 
 ![Screenshot](https://img.shields.io/badge/Live-Demo-brightgreen)
 
