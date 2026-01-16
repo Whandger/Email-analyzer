@@ -2,6 +2,8 @@ Email AI Classifier
 markdown
 # 📧 Email AI Classifier
 
+Acesse o Deploy aqui: https://email-analyzer-dx4v.onrender.com/
+
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-2.3.3-green.svg)](https://flask.palletsprojects.com/)
 [![Deploy on Render](https://img.shields.io/badge/Render-Deploy-blueviolet)](https://render.com)
