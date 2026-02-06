@@ -170,6 +170,7 @@ Acesse a aplicação (localhost:5000 ou seu deploy)
 Digite o texto do email ou envie um arquivo (PDF/TXT)
 Clique em "Analisar Email"
 Veja os resultados completos:
+````
 📊 Score de utilidade (0-100%)
 🏷️ Categoria automática com emoji
 🔴 Prioridade (Crítica, Alta, Média, Baixa)
@@ -177,7 +178,7 @@ Veja os resultados completos:
 📝 Resumo inteligente
 💬 Resposta pronta para enviar
 🔖 Tags relevantes
-
+````
 
 🎯 Exemplos de Análise
 
