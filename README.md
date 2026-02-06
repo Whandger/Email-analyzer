@@ -46,7 +46,7 @@ Sistema avançado de análise de emails que utiliza a poderosa **Perplexity AI A
 ## 🚀 **Deploy Rápido no Render**
 
 ### **Método 1: Deploy Automático (Recomendado)**
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)(https://email-analyzer-dx4v.onrender.com/)
+[https://render.com/images/deploy-to-render-button.svg](https://email-analyzer-dx4v.onrender.com/)
 
 1. **Clique no botão acima**
 2. **Configure o nome do serviço**
