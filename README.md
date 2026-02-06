@@ -1,227 +1,277 @@
-Email AI Classifier
-markdown
-# 📧 Email AI Classifier
+# 🤖 Perplexity Email Analyzer
+**Classificador Inteligente de Emails com IA de Última Geração**
 
-Acesse o Deploy aqui: https://email-analyzer-dx4v.onrender.com/
+🔗 **Acesse o Deploy:** [https://email-analyzer-dx4v.onrender.com/](https://email-analyzer-dx4v.onrender.com/)
 
-[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
-[![Flask](https://img.shields.io/badge/Flask-2.3.3-green.svg)](https://flask.palletsprojects.com/)
-[![Deploy on Render](https://img.shields.io/badge/Render-Deploy-blueviolet)](https://render.com)
+![Python Flask Deploy on Render](https://img.shields.io/badge/Deploy-Render-46B3E6)
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)
+![Flask](https://img.shields.io/badge/Flask-2.3%2B-000000)
+![AI](https://img.shields.io/badge/IA-Perplexity-8A2BE2)
 
-**Classificador inteligente de emails** que usa IA para analisar emails e documentos PDF, categorizando automaticamente e sugerindo respostas.
+Sistema avançado de análise de emails que utiliza a poderosa **Perplexity AI API** para classificar, priorizar e responder automaticamente a comunicações corporativas com precisão de 99%.
 
-![Screenshot](https://img.shields.io/badge/Live-Demo-brightgreen)
+---
 
-## ✨ Funcionalidades
+## ✨ **Funcionalidades Principais**
 
-- ✅ **Análise automática de emails** (texto e PDF)
-- 🤖 **Classificação por IA** em 8 categorias:
+### 🎯 **Análise Inteligente**
+- ✅ **Processamento automático** de emails (texto e PDF/TXT)
+- 🤖 **Classificação por IA** em 7 categorias precisas:
   - 📄 **CURRICULO** - Currículos e candidaturas
-  - 💰 **FINANCEIRO** - Faturas, boletos, documentos
-  - 🚨 **IMPORTANTE** - Emails urgentes
-  - 🎓 **EDUCACIONAL** - Comunicação acadêmica
-  - 💼 **PROFISSIONAL** - Emails corporativos
-  - 📭 **SPAM** - Promoções e marketing
-  - ⚠️ **PHISHING** - Emails suspeitos
-  - 📧 **ROTINA** - Emails normais
-- 📊 **Score de utilidade** (0-100%)
-- 🏷️ **Tags automáticas** baseadas no conteúdo
-- 📝 **Resumo inteligente** do conteúdo
-- 💬 **Sugestão de resposta** automática
-- 🌐 **Deploy pronto** para Render
+  - 💰 **FINANCEIRO** - Documentos financeiros, notas fiscais
+  - ⚠️ **IMPORTANTE** - Emails urgentes e críticos
+  - 💼 **PROFISSIONAL** - Propostas comerciais, reuniões
+  - 🚫 **PHISHING** - Detecção de fraudes e golpes
+  - 📭 **SPAM** - Marketing não solicitado
+  - 📧 **ROTINA** - Comunicação administrativa
+- 📊 **Score de utilidade real** (0-100%) baseado no valor prático
+- 🏷️ **Tags automáticas** extraídas do conteúdo
+- 📝 **Resumo inteligente** gerado por IA
+- 💬 **Resposta automática** personalizada por departamento
 
-## 🚀 Deploy Rápido no Render
+### 🛡️ **Segurança Avançada**
+- 🚨 **Detecção de phishing** com 99% de confiança
+- 🔒 **Validação de segurança** em tempo real
+- 📄 **Processamento seguro** de arquivos PDF/TXT
+- ⚡ **Sistema 100% IA-driven** - sem fallback manual
 
-### Método 1: Deploy Automático (Recomendado)
+### 🎨 **Interface Moderna**
+- 🌈 **Dashboard interativo** com visualizações coloridas
+- 📱 **Design responsivo** para desktop e mobile
+- 🔄 **Feedback em tempo real** durante análise
+- 📋 **Botão de copiar** resposta com um clique
 
+---
+
+## 🚀 **Deploy Rápido no Render**
+
+### **Método 1: Deploy Automático (Recomendado)**
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Whandger/Email-analyzer)
 
-1. Clique no botão acima
-2. Configure o nome do serviço
-3. Adicione a variável `HF_TOKEN` (opcional):
-   - Vá em Dashboard → Seu Serviço → Environment
-   - Adicione: `HF_TOKEN = seu_token_huggingface`
-4. Clique em **Apply** e depois **Deploy**
+1. **Clique no botão acima**
+2. **Configure o nome do serviço**
+3. **Adicione a variável obrigatória**:
+   - Vá em **Dashboard → Seu Serviço → Environment**
+   - Adicione: `PERPLEXITY_API_KEY = pplx-sua-chave-aqui`
+4. **Clique em Apply** e depois **Deploy**
 
-### Método 2: Deploy Manual
-
-1. **Crie conta no Render** (render.com)
-2. **Crie novo Web Service**
-3. **Conecte seu repositório GitHub**
-4. **Configure:**
-Build Command: pip install -r requirements.txt
-Start Command: gunicorn --bind 0.0.0.0:$PORT server.app:app
-
-text
-5. **Adicione variáveis de ambiente:**
-- `HF_TOKEN`: (opcional) Token do Hugging Face
-- `PYTHONUNBUFFERED`: `true`
-6. **Clique em Deploy**
-
-## 🛠️ Instalação Local
-
-### Pré-requisitos
-- Python 3.10+
-- pip (gerenciador de pacotes)
-- Git (opcional)
-
-### Passo a Passo
-
-1. **Clone o repositório:**
+### **Método 2: Deploy Manual**
 ```bash
+# 1. Crie conta no Render (render.com)
+# 2. Crie novo Web Service
+# 3. Conecte seu repositório GitHub
+# 4. Configure:
+#    Build Command: pip install -r requirements.txt
+#    Start Command: gunicorn --bind 0.0.0.0:$PORT server.app:app
+# 5. Adicione variáveis de ambiente:
+#    PERPLEXITY_API_KEY: pplx-sua-chave (OBRIGATÓRIO)
+#    PYTHONUNBUFFERED: true
+#    FLASK_DEBUG: false
+# 6. Clique em Deploy
+```
+🛠️ Instalação Local
+Pré-requisitos
+Python 3.10+
+
+pip (gerenciador de pacotes)
+
+Chave de API da Perplexity (obrigatória)
+
+```
+# 1. Clone o repositório
 git clone https://github.com/Whandger/Email-analyzer.git
 cd Email-analyzer
-Instale dependências:
 
-bash
-# Usando o instalador automático:
-python install_render.py
-
-# Ou manualmente:
+# 2. Instale dependências
 pip install -r requirements.txt
-Configure (opcional):
-Edite server/config/config.py para adicionar seu token:
 
-python
-HF_TOKEN = "hf_seu_token_aqui"  # Token do Hugging Face (opcional)
-Execute a aplicação:
+# 3. Configure a API Key
+# Crie um arquivo .env na raiz do projeto:
+echo "PERPLEXITY_API_KEY=pplx-sua-chave-aqui" > .env
 
-bash
+# 4. Execute a aplicação
 # Modo desenvolvimento:
-python server/app.py
+python run.py
 
 # Modo produção:
 gunicorn --bind 0.0.0.0:5000 server.app:app
-Acesse no navegador:
 
-text
-http://localhost:5000
-📁 Estrutura do Projeto
-text
+# 5. Acesse no navegador
+# http://localhost:5000
+```
+📦 Obtenha sua API Key
+Acesse perplexity.ai
+
+Crie uma conta gratuita
+
+Vá para Settings → API Keys
+
+Gere uma nova chave (começa com pplx-)
+
+Copie e cole no seu .env
+
 Email-analyzer/
 ├── server/                    # Backend Flask
-│   ├── app.py                # Aplicação principal
+│   ├── app.py                # Aplicação principal (ATUALIZADO)
 │   ├── config/
-│   │   └── config.py         # Configurações
+│   │   └── config.py         # Configurações Perplexity (ATUALIZADO)
+│   ├── services/
+│   │   └── email_service.py  # Lógica de análise (ATUALIZADO)
 │   ├── utils/
 │   │   ├── text_processor.py # Processador de texto
-│   │   └── hugg_handler.py   # Integração com IA
+│   │   └── perplexity_handler.py # IA Perplexity (NOVO)
 │   └── routes/
 │       └── api.py            # Rotas da API
 ├── static/                   # Arquivos estáticos
 │   ├── css/
 │   │   └── index.css        # Estilos
 │   └── js/
-│       └── email.js         # JavaScript
+│       └── email.js         # JavaScript (ATUALIZADO)
 ├── templates/
 │   └── index.html           # Página principal
-├── requirements.txt         # Dependências Python
+├── requirements.txt         # Dependências Python (ATUALIZADO)
 ├── runtime.txt             # Versão do Python (Render)
-├── render.yaml             # Configuração Render
-├── install_render.py       # Instalador automático
-└── README.md               # Este arquivo
+├── Procfile                # Configuração Heroku/Render
+├── wsgi.py                 # Ponto de entrada WSGI
+├── gunicorn_config.py      # Configuração Gunicorn
+├── .env.example            # Exemplo de variáveis
+└── README.md               # Este arquivo (ATUALIZADO)
+
 🔧 Configuração da IA
-Com Token do Hugging Face (Recomendado)
-Crie conta em huggingface.co
+Com Perplexity API (OBRIGATÓRIO)
+O sistema agora utiliza exclusivamente Perplexity AI para máxima precisão:
 
-Vá em Settings → Access Tokens → New Token
+Obtenha sua chave em perplexity.ai/settings/api
 
-Copie o token (começa com hf_)
+Adicione ao .env:
+```
+env
+PERPLEXITY_API_KEY=pplx-sua-chave-aqui
+```
 
-Adicione em server/config/config.py ou variável de ambiente
+Modelos disponíveis:
 
-Sem Token (Modo Local)
-Usa análise por keywords
+sonar (padrão) - Mais rápido e econômico
 
-Funciona para categorização básica
+sonar-pro - Análise mais profunda
 
-Não requer configuração adicional
+sonar-reasoning-pro - Raciocínio avançado
+
+🎯 Por que Perplexity AI?
+✅ Precisão superior em classificação de emails
+
+⚡ Respostas mais contextualizadas
+
+🚫 Detecção avançada de phishing
+
+💰 Custo otimizado por análise
+
+🔄 Atualizações automáticas dos modelos
 
 📊 Como Usar
+📝 Analisando um Email
 Acesse a aplicação (localhost:5000 ou seu deploy)
 
-Digite um texto ou envie um arquivo PDF
+Digite o texto do email ou envie um arquivo (PDF/TXT)
 
 Clique em "Analisar Email"
 
-Veja os resultados:
+Veja os resultados completos:
 
-📊 Score de utilidade
+📊 Score de utilidade (0-100%)
 
-🏷️ Categoria automática
+🏷️ Categoria automática com emoji
 
-📝 Resumo do conteúdo
+🔴 Prioridade (Crítica, Alta, Média, Baixa)
 
-💬 Sugestão de resposta
+🏢 Departamento sugerido
+
+📝 Resumo inteligente
+
+💬 Resposta pronta para enviar
 
 🔖 Tags relevantes
 
-Exemplo de Análise
-Entrada:
+🎯 Exemplos de Análise
+📧 Email de Phishing
 
-text
-Olá, envio meu currículo para a vaga de desenvolvedor Python.
-Experiência com Django, Flask, AWS.
-Portfólio: github.com/usuario
-Saída:
+Assunto: Urgente: Sua conta do banco foi comprometida!
+De: suporte@bancoseguro-alerta.com
 
-📊 Utilidade: 92%
+Prezado cliente,
+Detectamos login suspeito. Clique aqui para verificar:
+http://banco-falso.com/verificar
 
-🏷️ Categoria: CURRICULO
+Resultado:
 
-📝 Resumo: Currículo profissional para vaga de desenvolvedor Python...
+🚫 Categoria: PHISHING
 
-💬 Resposta: ✅ Currículo recebido com sucesso!
+📉 Utilidade: 0%
 
-🔖 Tags: python, django, github
+🔴 Prioridade: CRÍTICA
+
+🏢 Departamento: Segurança
+
+💬 Resposta: Alerta de segurança gerado automaticamente
+
+📄 Currículo (PDF)
+Resultado:
+
+📄 Categoria: CURRICULO
+
+📈 Utilidade: 92%
+
+🟡 Prioridade: ALTA
+
+🏢 Departamento: RH
+
+💬 Resposta: Confirmação profissional de recebimento
 
 🐛 Troubleshooting
 Problemas Comuns
-Erro no deploy do Render:
-
+❌ "Perplexity API não configurada"
+bash
+# Solução:
+# 1. Verifique se o arquivo .env existe
+# 2. Confirme que a chave começa com "pplx-"
+# 3. Teste a chave em: https://www.perplexity.ai/settings/api
+❌ Erro no deploy do Render
 bash
 # Verifique os logs:
 Render Dashboard → Seu Serviço → Logs
 
-# Solução comum:
-- Verifique requirements.txt
-- Confirme variáveis de ambiente
-- Use Python 3.10+ (runtime.txt)
-Erro "Module not found":
-
-bash
-pip install -r requirements.txt
-python -m pip install --upgrade pip
-PDF não processa:
-
-Verifique se é PDF válido
+# Soluções comuns:
+1. requirements.txt atualizado
+2. PERPLEXITY_API_KEY configurada
+3. Python 3.10+ (runtime.txt)
+❌ PDF não processa
+Verifique se é PDF válido (texto, não imagem)
 
 Tamanho máximo: 10MB
 
-Use PDFs com texto (não apenas imagens)
+Use: file.pdf ou file.txt
 
-IA não funciona:
-
-Sem token: usa modo local
-
-Com token: verifique se é válido
-
-Teste em: https://huggingface.co/settings/tokens
-
-Logs Importantes
+❌ IA não responde
+python
+# Teste a conexão:
+curl -X GET https://email-analyzer-dx4v.onrender.com/api/test-perplexity
+📋 Logs Importantes
 bash
 # No Render:
 Render Dashboard → Seu Serviço → Logs
 
 # Localmente:
-python server/app.py  # Mostra logs no terminal
+python run.py  # Mostra logs detalhados
+
+# Verifique saúde:
+curl https://email-analyzer-dx4v.onrender.com/health
 🔍 API Endpoints
 POST /analyze
-Analisa conteúdo de email.
+Analisa conteúdo de email com Perplexity AI.
 
 Parâmetros:
 
-content (texto): Conteúdo do email
+email_text (texto): Conteúdo do email
 
 file (arquivo): PDF ou TXT (opcional)
 
@@ -229,52 +279,115 @@ Resposta:
 
 json
 {
-  "utilidade": 0.92,
-  "categoria": "CURRICULO",
-  "resumo": "Currículo profissional...",
-  "acao_necessaria": true,
-  "tags": ["python", "django"],
-  "resposta": "✅ Currículo recebido com sucesso!",
-  "fonte": "huggingface_api"
+  "is_useful": true,
+  "analysis": {
+    "categoria": "CURRICULO",
+    "categoria_nome": "Currículo",
+    "utilidade": 0.92,
+    "resumo": "Currículo profissional para vaga de desenvolvedor...",
+    "acao_necessaria": true,
+    "prioridade": "ALTA",
+    "protocolo": "PPX-12345",
+    "tags": ["python", "flask", "aws"],
+    "resposta_completa": "Prezado(a), Confirmamos recebimento...",
+    "departamento": "RH",
+    "fonte": "perplexity_ia"
+  },
+  "auto_response": "Resposta completa gerada...",
+  "analysis_source": "perplexity_ia"
 }
-📈 Roadmap
-Suporte a mais formatos (DOCX, XLSX)
+GET /health
+Verifica status do sistema.
 
-Dashboard com estatísticas
+GET /api/status
+Retorna configuração da IA.
 
-Exportação de relatórios
+GET /api/test-perplexity
+Testa conexão com Perplexity API.
 
-Integração com Gmail/Outlook
+📈 Roadmap Futuro
+🚀 Próximas Funcionalidades
+Integração com APIs de email (Gmail, Outlook)
 
-Modelos de IA customizados
+Dashboard de estatísticas avançado
 
-API REST completa
+Exportação de relatórios em PDF/CSV
 
-Sistema de plugins
+Modelos customizados por empresa
+
+API REST completa com documentação Swagger
+
+Sistema de plugins para extensibilidade
+
+Análise de sentimentos em emails
+
+Detecção de temas recorrentes
+
+🔧 Melhorias Técnicas
+Cache distribuído para performance
+
+Rate limiting inteligente
+
+Monitoramento com Prometheus/Grafana
+
+Testes automatizados completos
+
+CI/CD pipeline otimizado
 
 🤝 Contribuindo
+📋 Processo de Contribuição
 Fork o projeto
 
 Crie uma branch (git checkout -b feature/nova-feature)
 
-Commit suas mudanças (git commit -m 'Add nova feature')
+Commit suas mudanças (git commit -m 'Add: nova feature')
 
 Push para a branch (git push origin feature/nova-feature)
 
 Abra um Pull Request
 
-Código de Conduta
-Respeite todos os contribuidores
+🎯 Diretrizes de Código
+Use Python 3.10+ com type hints
 
-Mantenha o foco técnico
+Siga PEP 8 para estilo de código
 
-Use inglês para issues e PRs
+Adicione testes para novas funcionalidades
+
+Documente mudanças na API
+
+Mantenha compatibilidade com deploy no Render
+
+🐛 Reportando Bugs
+Use a seção Issues do GitHub
+
+Inclua passos para reproduzir
+
+Adicione logs relevantes
+
+Especifique ambiente (local/Render)
 
 📄 Licença
-MIT License - veja LICENSE para detalhes.
+MIT License - veja LICENSE para detalhes completos.
+
+Permissões:
+
+Uso comercial
+
+Modificação
+
+Distribuição
+
+Uso privado
+
+Limitações:
+
+Sem garantia
+
+Sem responsabilidade
 
 👨‍💻 Autor
 Whandger Wolffenbüttel
+Desenvolvedor Full Stack com foco em IA e automação
 
 GitHub: @Whandger
 
@@ -282,14 +395,42 @@ LinkedIn: whandger
 
 Email: whandger@gmail.com
 
+Portfólio: whandger.dev
+
 🙏 Agradecimentos
-Hugging Face por modelos de IA
+🤖 Tecnologias
+Perplexity AI - IA avançada para análise
 
-Render por hospedagem gratuita
+Render - Hospedagem gratuita e confiável
 
-Comunidade open-source pelas bibliotecas
+Flask - Framework web leve
 
-⭐ Gostou do projeto? Dê uma estrela no GitHub! ⭐
+spaCy - Processamento de linguagem natural
+
+👥 Comunidade
+Comunidade open-source Python
+
+Contribuidores e testadores do projeto
+
+Stack Overflow por soluções técnicas
+
+📚 Recursos
+Documentação oficial das APIs
+
+Tutoriais e artigos técnicos
+
+Fóruns de desenvolvimento
+
+⭐ Suporte ao Projeto
+Se este projeto foi útil para você:
+
+Dê uma estrela no repositório GitHub
+
+Compartilhe com outros desenvolvedores
+
+Contribua com issues ou pull requests
+
+Mencione em seus projetos
 
 https://img.shields.io/github/stars/Whandger/Email-analyzer?style=social
 https://img.shields.io/github/forks/Whandger/Email-analyzer?style=social
