@@ -152,20 +152,15 @@ PERPLEXITY_API_KEY=pplx-sua-chave-aqui
 Modelos disponíveis:
 
 sonar (padrão) - Mais rápido e econômico
-
 sonar-pro - Análise mais profunda
-
 sonar-reasoning-pro - Raciocínio avançado
 
 🎯 Por que Perplexity AI?
 ✅ Precisão superior em classificação de emails
 
 ⚡ Respostas mais contextualizadas
-
 🚫 Detecção avançada de phishing
-
 💰 Custo otimizado por análise
-
 🔄 Atualizações automáticas dos modelos
 
 📊 Como Usar
@@ -173,59 +168,47 @@ sonar-reasoning-pro - Raciocínio avançado
 Acesse a aplicação (localhost:5000 ou seu deploy)
 
 Digite o texto do email ou envie um arquivo (PDF/TXT)
-
 Clique em "Analisar Email"
-
 Veja os resultados completos:
-
 📊 Score de utilidade (0-100%)
-
 🏷️ Categoria automática com emoji
-
 🔴 Prioridade (Crítica, Alta, Média, Baixa)
-
 🏢 Departamento sugerido
-
 📝 Resumo inteligente
-
 💬 Resposta pronta para enviar
-
 🔖 Tags relevantes
 
-🎯 Exemplos de Análise
-📧 Email de Phishing
 
+🎯 Exemplos de Análise
+
+📧 Email de Phishing
+````
 Assunto: Urgente: Sua conta do banco foi comprometida!
 De: suporte@bancoseguro-alerta.com
 
 Prezado cliente,
 Detectamos login suspeito. Clique aqui para verificar:
 http://banco-falso.com/verificar
-
+````
 Resultado:
-
+````
 🚫 Categoria: PHISHING
-
 📉 Utilidade: 0%
-
 🔴 Prioridade: CRÍTICA
-
 🏢 Departamento: Segurança
-
 💬 Resposta: Alerta de segurança gerado automaticamente
-
+````
+````
 📄 Currículo (PDF)
+````
 Resultado:
-
+````
 📄 Categoria: CURRICULO
-
 📈 Utilidade: 92%
-
 🟡 Prioridade: ALTA
-
 🏢 Departamento: RH
-
 💬 Resposta: Confirmação profissional de recebimento
+````
 
 🐛 Troubleshooting
 Problemas Comuns
@@ -388,39 +371,9 @@ Sem responsabilidade
 
 👨‍💻 Autor
 Whandger Wolffenbüttel
-Desenvolvedor Full Stack com foco em IA e automação
 
-GitHub: @Whandger
-
-LinkedIn: whandger
-
+LinkedIn: Whandger Wolffenbüttel
 Email: whandger@gmail.com
-
-Portfólio: whandger.dev
-
-🙏 Agradecimentos
-🤖 Tecnologias
-Perplexity AI - IA avançada para análise
-
-Render - Hospedagem gratuita e confiável
-
-Flask - Framework web leve
-
-spaCy - Processamento de linguagem natural
-
-👥 Comunidade
-Comunidade open-source Python
-
-Contribuidores e testadores do projeto
-
-Stack Overflow por soluções técnicas
-
-📚 Recursos
-Documentação oficial das APIs
-
-Tutoriais e artigos técnicos
-
-Fóruns de desenvolvimento
 
 ⭐ Suporte ao Projeto
 Se este projeto foi útil para você:
