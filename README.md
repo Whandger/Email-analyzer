@@ -152,7 +152,9 @@ PERPLEXITY_API_KEY=pplx-sua-chave-aqui
 Modelos disponíveis:
 
 sonar (padrão) - Mais rápido e econômico
+
 sonar-pro - Análise mais profunda
+
 sonar-reasoning-pro - Raciocínio avançado
 
 🎯 Por que Perplexity AI?
