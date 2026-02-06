@@ -109,7 +109,7 @@ Vá para Settings → API Keys
 Gere uma nova chave (começa com pplx-)
 
 Copie e cole no seu .env
-
+````
 Email-analyzer/
 ├── server/ # Backend Flask
 │ ├── app.py # Aplicação principal
@@ -136,7 +136,7 @@ Email-analyzer/
 ├── gunicorn_config.py # Configuração Gunicorn
 ├── .env.example # Exemplo de variáveis
 └── README.md # Este arquivo
-
+````
 🔧 Configuração da IA
 Com Perplexity API (OBRIGATÓRIO)
 O sistema agora utiliza exclusivamente Perplexity AI para máxima precisão:
