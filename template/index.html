@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+
+        <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Email Response</title>
+  <link rel="icon" href="" id="favicon">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+  <link rel="stylesheet" href="../static/css/index.css">
+        </head>
+
+        <body>
+            <div class="container">
+                <h1>Análise Inteligente de Emails</h1>
+                <h2>Envie um email para que o sistema classifique o conteúdo e sugira uma resposta automática.</h2>
+                <form id="form">
+                <div id="Pdf_container">
+                    <p>Formatos aceitos: PDF ou TXT. O conteúdo será extraído automaticamente para análise.</p>
+                </div>
+
+                <h4>Ou</h4>
+
+                <div id="Text_container">
+                    <textarea id="text" placeholder="Cole aqui o texto completo do email que deseja analisar…"></textarea>
+                </div>
+                <button id="button">Analisar Email</button>
+                </form>
+            </div>
+            <script src="{{ url_for('static', filename='js/email.js') }}"></script>
+        </body>
+
+
+    </html>

@@ -1,62 +1,101 @@
-# server/app.py
-from flask import Flask
+# app.py - VERSÃO PRODUÇÃO COMPLETA
+from flask import Flask, request, jsonify
 from dotenv import load_dotenv
 import os
 
-# Carrega variáveis do .env
 load_dotenv()
 
 def create_app():
-    print("🚀 Iniciando aplicação...")
-    
     app = Flask(
         __name__,
-        template_folder=os.path.join(os.path.dirname(__file__), '..', 'templates'),  # MUDAR: template -> templates
+        template_folder=os.path.join(os.path.dirname(__file__), '..', 'template'),
         static_folder=os.path.join(os.path.dirname(__file__), '..', 'static')
     )
 
-    # Configurações
+    # 🔒 CONFIGURAÇÕES DE PRODUÇÃO
     app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024  # 10MB
-    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', os.urandom(24).hex())
+    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', os.urandom(24))
+    app.config['DEBUG'] = os.environ.get('FLASK_DEBUG', 'false').lower() == 'true'
+    app.config['TESTING'] = False
     
-    # Verificar se estamos no Render
-    IS_RENDER = os.environ.get('RENDER', False)
-    if IS_RENDER:
-        print("🌐 Ambiente: Render (Produção)")
-    
-    # Validar configurações
+    # 🔐 Headers de segurança
+    @app.after_request
+    def add_security_headers(response):
+        response.headers['X-Content-Type-Options'] = 'nosniff'
+        response.headers['X-Frame-Options'] = 'DENY'
+        response.headers['X-XSS-Protection'] = '1; mode=block'
+        response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+        return response
+
+    # Validar configuração
     from server.config.config import Config
-    try:
-        Config.validate()
-        print("✅ Configuração validada com sucesso")
-    except ValueError as e:
-        print(f"⚠️ Aviso: {e}")
-        print("ℹ️ O sistema funcionará, mas a análise por IA não estará disponível")
+    
+    # Inicialização silenciosa em produção
+    if not app.config['DEBUG']:
+        print("🚀 Iniciando Perplexity Email Analyzer...")
+    
+    perplexity_available = Config.is_perplexity_available()
+    
+    if not perplexity_available:
+        app.logger.error("Perplexity API não configurada")
+        app.config['PERPLEXITY_ENABLED'] = False
+        app.config['ERROR_MODE'] = True
+    else:
+        app.config['PERPLEXITY_ENABLED'] = True
+        app.config['ERROR_MODE'] = False
+        if app.config['DEBUG']:
+            print(f"✅ Perplexity configurado - Modelo: {Config.PERPLEXITY_DEFAULT_MODEL}")
 
     # Registrar blueprints
-    try:
-        from server.routes.routes import page_bp
-        app.register_blueprint(page_bp)
-        print(f"✅ Blueprint registrado: {page_bp.name}")
-    except Exception as e:
-        print(f"❌ Erro ao registrar blueprint: {e}")
-
-    # Rota de saúde para Render
+    from server.routes.routes import page_bp
+    app.register_blueprint(page_bp)
+    
+    # 🔧 Rotas de monitoramento (importantes para produção)
     @app.route('/health')
     def health():
-        return {'status': 'healthy', 'service': 'email-analyzer'}, 200
+        return jsonify({
+            'status': 'healthy' if app.config['PERPLEXITY_ENABLED'] else 'unhealthy',
+            'perplexity': Config.is_perplexity_available(),
+            'timestamp': os.environ.get('DEPLOY_TIMESTAMP', 'unknown')
+        }), 200
     
-    # Rota raiz para teste
-    @app.route('/')
-    def index():
-        return "🚀 Email Analyzer está funcionando! Acesse /upload para começar."
-
-    print("✅ Aplicação criada com sucesso!")
+    @app.route('/metrics')
+    def metrics():
+        # Rota para métricas (usar com Prometheus)
+        from flask import Response
+        metrics_data = f"""
+# HELP app_requests_total Total number of requests
+# TYPE app_requests_total counter
+app_requests_total{{status="healthy"}} 1
+"""
+        return Response(metrics_data, mimetype='text/plain')
+    
+    # 🛡️ Middleware de segurança
+    @app.before_request
+    def check_api():
+        if request.endpoint == 'page_bp.analyze_email':
+            if not Config.is_perplexity_available():
+                return jsonify({
+                    'error': 'Service unavailable',
+                    'message': 'AI service is not configured'
+                }), 503
+    
+    # 📊 Logging em produção
+    if not app.config['DEBUG']:
+        import logging
+        from logging.handlers import RotatingFileHandler
+        
+        # Configurar logging
+        handler = RotatingFileHandler('app.log', maxBytes=10000, backupCount=3)
+        handler.setLevel(logging.INFO)
+        app.logger.addHandler(handler)
+        app.logger.setLevel(logging.INFO)
+    
     return app
 
-# Esta parte só executa se rodar o arquivo diretamente
+# Ponto de entrada para WSGI
+app = create_app()
+
 if __name__ == '__main__':
-    app = create_app()
-    port = int(os.environ.get("PORT", 5000))
-    debug_mode = os.environ.get('FLASK_ENV', 'development') == 'development'
-    app.run(debug=debug_mode, host='0.0.0.0', port=port)
+    # ⚠️ NÃO usar em produção - apenas para desenvolvimento
+    app.run(debug=app.config['DEBUG'], host='0.0.0.0', port=5000)

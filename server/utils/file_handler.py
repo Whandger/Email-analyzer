@@ -23,7 +23,7 @@ class FileHandler:
         ext = os.path.splitext(file_path)[1].lower()
         
         if ext == '.pdf':
-            raw_text = FileHandler._read_pdf_robust(file_path) 
+            raw_text = FileHandler._read_pdf_robust(file_path)  # MÉTODO MELHORADO
         elif ext == '.txt':
             raw_text = FileHandler._read_txt(file_path)
         else:
