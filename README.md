@@ -156,12 +156,13 @@ sonar-pro - Análise mais profunda
 sonar-reasoning-pro - Raciocínio avançado
 
 🎯 Por que Perplexity AI?
+````
 ✅ Precisão superior em classificação de emails
-
 ⚡ Respostas mais contextualizadas
 🚫 Detecção avançada de phishing
 💰 Custo otimizado por análise
 🔄 Atualizações automáticas dos modelos
+````
 
 📊 Como Usar
 📝 Analisando um Email
