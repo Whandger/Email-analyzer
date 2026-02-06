@@ -111,31 +111,31 @@ Gere uma nova chave (começa com pplx-)
 Copie e cole no seu .env
 
 Email-analyzer/
-├── server/                    # Backend Flask
-│   ├── app.py                # Aplicação principal (ATUALIZADO)
-│   ├── config/
-│   │   └── config.py         # Configurações Perplexity (ATUALIZADO)
-│   ├── services/
-│   │   └── email_service.py  # Lógica de análise (ATUALIZADO)
-│   ├── utils/
-│   │   ├── text_processor.py # Processador de texto
-│   │   └── perplexity_handler.py # IA Perplexity (NOVO)
-│   └── routes/
-│       └── api.py            # Rotas da API
-├── static/                   # Arquivos estáticos
-│   ├── css/
-│   │   └── index.css        # Estilos
-│   └── js/
-│       └── email.js         # JavaScript (ATUALIZADO)
+├── server/ # Backend Flask
+│ ├── app.py # Aplicação principal
+│ ├── config/
+│ │ └── config.py # Configurações Perplexity
+│ ├── services/
+│ │ └── email_service.py # Lógica de análise
+│ ├── utils/
+│ │ ├── text_processor.py # Processador de texto
+│ │ └── perplexity_handler.py # IA Perplexity
+│ └── routes/
+│ └── api.py # Rotas da API
+├── static/ # Arquivos estáticos
+│ ├── css/
+│ │ └── index.css # Estilos
+│ └── js/
+│ └── email.js # JavaScript
 ├── templates/
-│   └── index.html           # Página principal
-├── requirements.txt         # Dependências Python (ATUALIZADO)
-├── runtime.txt             # Versão do Python (Render)
-├── Procfile                # Configuração Heroku/Render
-├── wsgi.py                 # Ponto de entrada WSGI
-├── gunicorn_config.py      # Configuração Gunicorn
-├── .env.example            # Exemplo de variáveis
-└── README.md               # Este arquivo (ATUALIZADO)
+│ └── index.html # Página principal
+├── requirements.txt # Dependências Python
+├── runtime.txt # Versão do Python
+├── Procfile # Configuração Heroku/Render
+├── wsgi.py # Ponto de entrada WSGI
+├── gunicorn_config.py # Configuração Gunicorn
+├── .env.example # Exemplo de variáveis
+└── README.md # Este arquivo
 
 🔧 Configuração da IA
 Com Perplexity API (OBRIGATÓRIO)
