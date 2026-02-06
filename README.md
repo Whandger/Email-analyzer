@@ -3,7 +3,7 @@
 
 🔗 **Acesse o Deploy:** [https://email-analyzer-dx4v.onrender.com/](https://email-analyzer-dx4v.onrender.com/)
 
-![Python Flask Deploy on Render](https://img.shields.io/badge/Deploy-Render-46B3E6)
+(https://img.shields.io/badge/Deploy-Render-46B3E6
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)
 ![Flask](https://img.shields.io/badge/Flask-2.3%2B-000000)
 ![AI](https://img.shields.io/badge/IA-Perplexity-8A2BE2)
