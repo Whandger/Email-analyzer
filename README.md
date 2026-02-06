@@ -276,7 +276,7 @@ email_text (texto): Conteúdo do email
 file (arquivo): PDF ou TXT (opcional)
 
 Resposta:
-
+````
 json
 {
   "is_useful": true,
@@ -296,6 +296,7 @@ json
   "auto_response": "Resposta completa gerada...",
   "analysis_source": "perplexity_ia"
 }
+````
 GET /health
 Verifica status do sistema.
 
